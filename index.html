@@ -1,0 +1,498 @@
+<!doctype html>
+<html lang="ro">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cristina Popa • Stil de viață sănătos & Dietă sănătoasă</title>
+  <meta name="description" content="Reclama pentru un stil de viață sănătos și o dietă sănătoasă. Contact: popacristinamihaela@gmail.com" />
+
+  <style>
+    :root{
+      --bg:#0b1220;
+      --card:#111b33;
+      --text:#eaf0ff;
+      --muted:#b8c2e0;
+      --accent:#4ade80;
+      --accent2:#60a5fa;
+      --danger:#fb7185;
+      --border: rgba(255,255,255,0.10);
+      --shadow: 0 20px 60px rgba(0,0,0,0.35);
+      --radius: 18px;
+      --max: 1100px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+      background: radial-gradient(1200px 700px at 20% 10%, rgba(96,165,250,0.25), transparent 60%),
+                  radial-gradient(900px 600px at 80% 20%, rgba(74,222,128,0.20), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.5;
+    }
+    a{color:inherit; text-decoration:none}
+    .container{max-width:var(--max); margin:0 auto; padding:0 18px;}
+    header{
+      padding: 28px 0 12px;
+      position: sticky; top: 0;
+      backdrop-filter: blur(10px);
+      background: linear-gradient(to bottom, rgba(11,18,32,0.85), rgba(11,18,32,0.55));
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      z-index: 10;
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:12px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:12px;
+      font-weight: 800;
+      letter-spacing: 0.2px;
+    }
+    .logo{
+      width:40px; height:40px; border-radius:14px;
+      background: linear-gradient(135deg, rgba(74,222,128,0.95), rgba(96,165,250,0.95));
+      box-shadow: 0 14px 40px rgba(74,222,128,0.18);
+      display:grid; place-items:center;
+      border: 1px solid rgba(255,255,255,0.22);
+      flex: 0 0 auto;
+    }
+    .logo svg{width:22px; height:22px}
+    .pill{
+      display:inline-flex; gap:10px; align-items:center;
+      padding: 10px 14px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: 14px;
+      background: rgba(255,255,255,0.03);
+      white-space: nowrap;
+    }
+    .hero{
+      padding: 42px 0 18px;
+    }
+    .grid{
+      display:grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+    @media (max-width: 900px){
+      .grid{grid-template-columns:1fr}
+    }
+    .card{
+      background: rgba(17,27,51,0.72);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .hero-left{
+      padding: 24px;
+      overflow: hidden;
+      position: relative;
+    }
+    .hero-left:before{
+      content:"";
+      position:absolute;
+      inset:-2px;
+      background: radial-gradient(600px 220px at 20% 0%, rgba(96,165,250,0.25), transparent 55%),
+                  radial-gradient(520px 260px at 90% 30%, rgba(74,222,128,0.20), transparent 58%);
+      pointer-events:none;
+    }
+    .hero-left > *{position: relative}
+    .kicker{
+      display:inline-flex;
+      gap:10px;
+      align-items:center;
+      margin-bottom: 14px;
+    }
+    .dot{
+      width:10px; height:10px; border-radius: 99px;
+      background: var(--accent);
+      box-shadow: 0 0 0 6px rgba(74,222,128,0.15);
+    }
+    h1{
+      margin: 0 0 10px;
+      font-size: clamp(28px, 3.4vw, 44px);
+      line-height: 1.1;
+      letter-spacing: -0.6px;
+    }
+    .lead{
+      margin: 0 0 18px;
+      color: var(--muted);
+      font-size: 16px;
+      max-width: 62ch;
+    }
+    .cta-row{
+      display:flex; flex-wrap:wrap;
+      gap: 12px;
+      align-items:center;
+      margin-top: 10px;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center; justify-content:center;
+      gap:10px;
+      padding: 12px 16px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.04);
+      color: var(--text);
+      font-weight: 700;
+      transition: transform .15s ease, background .15s ease, border-color .15s ease;
+      cursor:pointer;
+      user-select:none;
+    }
+    .btn:hover{transform: translateY(-1px); border-color: rgba(255,255,255,0.22)}
+    .btn-primary{
+      background: linear-gradient(135deg, rgba(74,222,128,0.95), rgba(96,165,250,0.92));
+      border-color: rgba(255,255,255,0.26);
+      color: #071019;
+    }
+    .btn svg{width:18px;height:18px}
+    .hero-right{
+      padding: 18px;
+      display:flex; flex-direction:column;
+      gap: 12px;
+    }
+    .mini{
+      padding: 14px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.03);
+    }
+    .mini h3{margin:0 0 6px; font-size: 16px}
+    .mini p{margin:0; color: var(--muted); font-size: 14px}
+    .stats{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    .stat{
+      padding: 14px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.03);
+    }
+    .stat b{
+      display:block;
+      font-size: 18px;
+      letter-spacing: -0.3px;
+    }
+    .stat span{color: var(--muted); font-size: 13px}
+    section{padding: 18px 0;}
+    .section-title{
+      margin: 0 0 12px;
+      font-size: 22px;
+      letter-spacing: -0.3px;
+    }
+    .features{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+    @media (max-width: 900px){
+      .features{grid-template-columns:1fr}
+    }
+    .feature{
+      padding: 18px;
+    }
+    .feature .icon{
+      width:40px; height:40px;
+      border-radius: 14px;
+      display:grid; place-items:center;
+      background: rgba(96,165,250,0.14);
+      border: 1px solid rgba(96,165,250,0.24);
+      margin-bottom: 10px;
+    }
+    .feature:nth-child(2) .icon{
+      background: rgba(74,222,128,0.14);
+      border-color: rgba(74,222,128,0.24);
+    }
+    .feature:nth-child(3) .icon{
+      background: rgba(251,113,133,0.14);
+      border-color: rgba(251,113,133,0.24);
+    }
+    .feature h3{margin:0 0 6px; font-size: 16px}
+    .feature p{margin:0; color: var(--muted); font-size: 14px}
+    .steps{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    @media (max-width: 900px){
+      .steps{grid-template-columns:1fr}
+    }
+    .step{
+      padding: 18px;
+    }
+    .step-top{
+      display:flex; align-items:flex-start; gap: 12px;
+      margin-bottom: 8px;
+    }
+    .num{
+      width:34px; height:34px;
+      border-radius: 12px;
+      display:grid; place-items:center;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.12);
+      font-weight: 900;
+      color: var(--accent2);
+      flex: 0 0 auto;
+    }
+    .step h3{margin:0; font-size: 16px}
+    .step p{margin:0; color: var(--muted); font-size: 14px}
+    .contact{
+      padding: 20px;
+      display:flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .contact-left h2{margin:0 0 8px; font-size: 22px}
+    .contact-left p{margin:0; color: var(--muted)}
+    .email{
+      display:flex; flex-direction:column; align-items:flex-end; gap: 8px;
+    }
+    @media (max-width: 700px){
+      .email{align-items:flex-start}
+    }
+    .email a{
+      font-weight: 900;
+      background: rgba(74,222,128,0.12);
+      border: 1px solid rgba(74,222,128,0.25);
+      padding: 12px 14px;
+      border-radius: 14px;
+      color: var(--text);
+    }
+    footer{
+      padding: 18px 0 30px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .fineprint{
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 14px;
+      display:flex;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M12 21s-7-4.4-7-11a4 4 0 0 1 7-2 4 4 0 0 1 7 2c0 6.6-7 11-7 11Z" stroke="rgba(0,0,0,0.75)" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M8.7 10.2 11 12.5l4.3-5" stroke="rgba(0,0,0,0.75)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div>
+          Cristina Popa
+          <div style="font-weight:600; color: var(--muted); font-size: 13px;">@antrenorcristinapopa</div>
+        </div>
+      </div>
+
+      <div class="pill" role="note">
+        <span class="dot" aria-hidden="true"></span>
+        <span>Stil de viață sănătos • Dietă sănătoasă • Energie & consecvență</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container hero">
+      <div class="grid">
+        <div class="card hero-left">
+          <div class="kicker">
+            <span class="dot" aria-hidden="true"></span>
+            <span style="color:var(--muted); font-weight:700;">Transformă-ți rutina, nu doar corpul.</span>
+          </div>
+
+          <h1>Planuri simple, gustoase și sustenabile pentru un stil de viață sănătos.</h1>
+          <p class="lead">
+            Aici găsești inspirație și ghidaj pentru alimentație corectă, obiceiuri sănătoase și
+            progres real, într-un ritm pe care îl poți menține.
+          </p>
+
+          <div class="cta-row">
+            <a class="btn btn-primary" href="mailto:popacristinamihaela@gmail.com?subject=Contact%20-%20Cristina%20Popa" aria-label="Trimite un email">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M4 6h16v12H4z" stroke="rgba(0,0,0,0.75)" stroke-width="2" />
+                <path d="M4 7l8 6 8-6" stroke="rgba(0,0,0,0.75)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              Programează-te / întreabă
+            </a>
+
+            <a class="btn" href="#contact">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M12 5v14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+              Contact & informații
+            </a>
+          </div>
+        </div>
+
+        <aside class="card hero-right" aria-label="Rezumat">
+          <div class="mini">
+            <h3>Ce vei primi</h3>
+            <p>Idei practice, structură și motivație pentru o dietă sănătoasă.</p>
+          </div>
+          <div class="stats">
+            <div class="stat">
+              <b>Nutriție</b>
+              <span>alegeri inteligente</span>
+            </div>
+            <div class="stat">
+              <b>Obiceiuri</b>
+              <span>pe termen lung</span>
+            </div>
+            <div class="stat">
+              <b>Flexibil</b>
+              <span>pentru stilul tău</span>
+            </div>
+            <div class="stat">
+              <b>Focus</b>
+              <span>pe consistență</span>
+            </div>
+          </div>
+          <div class="mini">
+            <h3>Instagram</h3>
+            <p>Urmărește @antrenorcristinapopa pentru postări & ghiduri.</p>
+          </div>
+        </aside>
+      </div>
+    </div>
+
+    <section class="container">
+      <h2 class="section-title">De ce să începi acum?</h2>
+
+      <div class="features">
+        <div class="card feature">
+          <div class="icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <path d="M12 2s7 4 7 11-7 9-7 9-7-2-7-9 7-11 7-11Z" stroke="rgba(96,165,250,0.95)" stroke-width="2"/>
+              <path d="M9.5 12.5 11 14l3.5-4.5" stroke="rgba(96,165,250,0.95)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3>Claritate</h3>
+          <p>Reguli simple și porții ușor de aplicat, fără complicații inutile.</p>
+        </div>
+
+        <div class="card feature">
+          <div class="icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <path d="M12 21s-7-4.4-7-11a4 4 0 0 1 7-2 4 4 0 0 1 7 2c0 6.6-7 11-7 11Z" stroke="rgba(74,222,128,0.95)" stroke-width="2"/>
+              <path d="M8.7 10.2 11 12.5l4.3-5" stroke="rgba(74,222,128,0.95)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3>Constanță</h3>
+          <p>Un plan care te ajută să continui și când nu ai “chef”.</p>
+        </div>
+
+        <div class="card feature">
+          <div class="icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4v8Z" stroke="rgba(251,113,133,0.95)" stroke-width="2" stroke-linejoin="round"/>
+              <path d="M8 9h8" stroke="rgba(251,113,133,0.95)" stroke-width="2" stroke-linecap="round"/>
+              <path d="M8 13h6" stroke="rgba(251,113,133,0.95)" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Sprijin</h3>
+          <p>Comunicare și recomandări adaptate obiectivelor tale.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="container">
+      <h2 class="section-title">Cum lucrăm (simplu)</h2>
+
+      <div class="steps">
+        <div class="card step">
+          <div class="step-top">
+            <div class="num">1</div>
+            <div>
+              <h3>Mesaj & obiective</h3>
+              <p>Îmi spui ce vrei să obții (energie, slăbit, tonifiere, echilibru).</p>
+            </div>
+          </div>
+          <p style="color:var(--muted); font-size:14px;">
+            Îți răspund cu următorii pași și informații despre cum arată parcursul.
+          </p>
+        </div>
+
+        <div class="card step">
+          <div class="step-top">
+            <div class="num">2</div>
+            <div>
+              <h3>Plan alimentar</h3>
+              <p>O dietă sănătoasă, structurată și adaptată preferințelor tale.</p>
+            </div>
+          </div>
+          <p style="color:var(--muted); font-size:14px;">
+            Accent pe calitate, echilibru și sustenabilitate.
+          </p>
+        </div>
+
+        <div class="card step">
+          <div class="step-top">
+            <div class="num">3</div>
+            <div>
+              <h3>Monitorizare & ajustări</h3>
+              <p>Te ajut să păstrezi ritmul și să faci ajustări când e nevoie.</p>
+            </div>
+          </div>
+          <p style="color:var(--muted); font-size:14px;">
+            Progresul e o combinație de rutină + direcție bună.
+          </p>
+        </div>
+
+        <div class="card step">
+          <div class="step-top">
+            <div class="num">4</div>
+            <div>
+              <h3>Rezultate care se mențin</h3>
+              <p>Un stil de viață sănătos pe care îl poți duce mai departe.</p>
+            </div>
+          </div>
+          <p style="color:var(--muted); font-size:14px;">
+            Nu “dietă de moment”, ci obiceiuri care devin naturale.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="container">
+      <div class="card contact">
+        <div class="contact-left">
+          <h2>Contact</h2>
+          <p>Scrie-mi pentru detalii despre colaborare sau pentru recomandări personalizate.</p>
+        </div>
+        <div class="email">
+          <a href="mailto:popacristinamihaela@gmail.com?subject=Salut%20Cristina%20Popa" aria-label="Email Cristina Popa">
+            popacristinamihaela@gmail.com
+          </a>
+          <span style="color:var(--muted); font-size:13px;">Răspuns cât mai rapid posibil.</span>
+        </div>
+      </div>
+    </section>
+
+    <footer class="container">
+      <div class="fineprint">
+        <div>© <span id="year"></span> Cristina Popa • Stil de viață sănătos</div>
+        <div>Instagram: <a href="https://instagram.com/antrenorcristinapopa" target="_blank" rel="noopener">@antrenorcristinapopa</a></div>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
